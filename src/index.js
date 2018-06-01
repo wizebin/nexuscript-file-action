@@ -19,10 +19,9 @@ function assureDirExists(targetDir, { relativeToSource = false } = {}) {
 }
 
 wrapAction((properties, sendMessage) => {
-  return new Promise(resolve => {
-    const { filename, data, encoding = 'json', append = false } = properties;
-    assureDirExists(path.dirname(filename));
-    const flag = append ? 'a+' : 'w';
-    return fs.writeFile(filename, data, { flag });
-  });
+  const { filename, data, encoding = 'json', append = false } = properties;
+  assureDirExists(path.dirname(filename));
+  const flag = append ? 'a+' : 'w';
+  fs.writeFile(filename, data, { flag });
+  return { result: 'success', filename };
 })
