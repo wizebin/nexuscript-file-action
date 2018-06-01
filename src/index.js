@@ -22,6 +22,7 @@ wrapAction((properties, sendMessage) => {
   return new Promise(resolve => {
     const { filename, data, encoding = 'json', append = false } = properties;
     assureDirExists(path.dirname(filename));
-    return fs.writeFile(filename, data);
+    const flags = append ? 'a+' : 'w';
+    return fs.writeFile(filename, data, flags);
   });
 })
