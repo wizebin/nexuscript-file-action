@@ -1,6 +1,6 @@
 {
   "name": "nexuscript-file-action",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Nexuscript action to write data to a file",
   "main": "src/index.js",
   "scripts": {
