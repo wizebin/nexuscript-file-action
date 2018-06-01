@@ -1,0 +1,34 @@
+{
+  "name": "nexuscript-file-action",
+  "version": "1.0.0",
+  "description": "Nexuscript action to write data to a file",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "author": "nexusoft",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.7.0",
+    "webpack-cli": "^2.1.3"
+  },
+  "dependencies": {
+    "nexusdk": "github:wizebin/nexusdk"
+  },
+  "nexuscript": {
+    "type": "action",
+    "author": "nexuscript",
+    "price": "free",
+    "configuration": {
+      "filename": "string",
+      "data": "string",
+      "encoding": "string",
+      "append": "boolean"
+    },
+    "category": "terminal",
+    "build_command": "npm run build",
+    "dist_folder": "dist",
+    "dist_file": "dist/main.js"
+  }
+}
