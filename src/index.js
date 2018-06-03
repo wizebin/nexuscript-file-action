@@ -22,6 +22,6 @@ wrapAction((properties, sendMessage) => {
   const { filename, data, encoding = 'json', append = false } = properties;
   assureDirExists(path.dirname(filename));
   const flag = append ? 'a+' : 'w';
-  fs.writeFile(filename, data, { flag });
+  fs.writeFileSync(filename, data, { flag });
   return { result: 'success', filename };
 })
